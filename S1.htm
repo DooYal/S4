@@ -1,0 +1,535 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>S1</title>  
+		<!--（此为html部分注释）设置区域名称-->
+		<style type="text/css">
+.highcharts-figure, .highcharts-data-table table {
+    min-width: 310px; 
+    max-width: 800px;                             /*（此为CSS部分注释）数值设置为微分单元数的160/7倍*/	
+    margin: 1em auto;
+}
+
+#container {
+    height: 750px;
+}
+
+.highcharts-tooltip h3 {
+    margin: 0.3em 0;
+}
+
+.highcharts-data-table table {
+	font-family: Verdana, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #EBEBEB;
+	margin: 10px auto;
+	text-align: center;
+	width: 100%;
+	max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+
+		</style>
+	</head>
+	<body>
+<script src="http://code.highcharts.com.cn/highcharts/8.0.4/highcharts.js"></script>
+<script src="http://code.highcharts.com.cn/highcharts/8.0.4/highcharts-more.js"></script>
+<script src="http://code.highcharts.com.cn/highcharts/8.0.4/modules/exporting.js"></script>
+<script src="http://code.highcharts.com.cn/highcharts/8.0.4/modules/export-data.js"></script>
+<script src="http://code.highcharts.com.cn/highcharts/8.0.4/modules/accessibility.js"></script>
+
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        The SSR position related D1-relative density (pD1RD) distribution map in the position of 10001-44821 bp of human reference Y-DNA (NC_000024.10) 
+    </p>
+	<!--设置区域范围-->
+</figure>
+
+
+
+		<script type="text/javascript">
+Highcharts.chart('container', {
+
+    credits:{
+     enabled:false	     
+    },
+	chart: {
+        type: 'line',
+        plotBorderWidth: 1,
+        zoomType: 'xy'
+    },
+    legend: {
+        enabled: true
+    },
+    title:{
+	    verticalAlign:'top',
+        text:"<a href='https://pan.baidu.com/s/1tnMQSBfAFOPSOL4CEkbAJA'>540 processed SSR pD1RD distribution maps</a>"+
+		      "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=10001&to=11000'>nucleotides at 10001-11000 bp</a>"+    //（此为javascript部分注释）设置单元位置
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=11001&to=12000'>11001-12000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=12001&to=13000'>12001-13000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=13001&to=14000'>13001-14000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=14001&to=15000'>14001-15000 bp</a>"+
+		      "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=15001&to=16000'>15001-16000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=16001&to=17000'>16001-17000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=17001&to=18000'>17001-18000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=18001&to=19000'>18001-19000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=19001&to=20000'>19001-20000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=20001&to=21000'>20001-21000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=21001&to=22000'>21001-22000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=22001&to=23000'>22001-23000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=23001&to=24000'>23001-24000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=24001&to=25000'>24001-25000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=25001&to=26000'>25001-26000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=26001&to=27000'>26001-27000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=27001&to=28000'>27001-28000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=28001&to=29000'>28001-29000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=29001&to=30000'>29001-30000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=30001&to=31000'>30001-31000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=31001&to=32000'>31001-32000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=32001&to=33000'>32001-33000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=33001&to=34000'>33001-34000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=34001&to=35000'>34001-35000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=35001&to=36000'>35001-36000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=36001&to=37000'>36001-37000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=37001&to=38000'>37001-38000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=38001&to=39000'>38001-39000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=39001&to=40000'>39001-40000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=40001&to=41000'>40001-41000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=41001&to=42000'>41001-42000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=42001&to=43000'>42001-43000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=43001&to=44000'>43001-44000 bp</a>"+
+			  "  <a href='https://www.ncbi.nlm.nih.gov/nuccore/NC_000024.10?report=fasta&from=44001&to=44821'>44001-44821 bp</a>",			  
+		style:{
+		   fontSize:"10px"
+		},	
+		useHTML:true
+	},	
+    subtitle: {
+        verticalAlign:'bottom',
+		y:-5,
+		text: "<span style='white-space:pre;'>"+"sHP:super high peak    HP:high peak    MP:middle peak    LP:low peak"+"</span>"+"<br>"+"<span style='white-space:pre;'>"+"bELR:big extremely low (density) region    sELR:small extremely low (density) region    ZD:zero (density) desert"+"</span>",
+		style:{
+		    fontSize:"13px",
+			fontWeight:'bold'
+		}	
+	},	
+    accessibility: {
+        point: {
+            valueDescriptionFormat: 'Location: {point.x}, pD1RD: {point.y}, peak: {point.name},seq:{point.seq}.'  //列表每行显示格式
+        }
+    },
+
+    xAxis: {
+        gridLineWidth: 1,
+        title: {
+            text: 'Genomic location'
+        },
+        accessibility: {
+            rangeDescription: 'Range: 10001 to 44821.'  //设置区域范围
+        },
+		tickPixelInterval:10
+    },
+
+    yAxis: {
+        startOnTick: false,
+        endOnTick: false,
+        title: {
+            text: 'SSR pD1RD (0-750)'
+        },        
+        accessibility: {
+            rangeDescription: 'Range: 0 to 700.'
+        },
+		tickPixelInterval:10
+		
+    },
+
+    
+    tooltip: {
+        useHTML:true,
+		headerFormat: '<table>',
+        pointFormat: '<tr><th colspan="2"><h3>{point.name}</h3></th></tr>' +
+                        '<tr><th>pD1RD:</th><td>{point.y}</td></tr>' +
+            '<tr><th>Note:</th><td>{point.seq}</td></tr>',
+        footerFormat: '</table>',
+        followPointer: true
+    },
+    plotOptions: {
+        series: {
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}'
+            }
+        }
+    },
+
+     series: [{
+        name:'Top',
+		data: [
+            {x:10001,y:700,name:null,seq:null},            
+        ],
+		color:'#000000'
+	},{
+	    name:'Mono-SSR pD1RD',
+		data: [
+			{x:10000,y:null,name:null,sequence:null},
+			{x:10500,y:12,name:null,sequence:null},
+			{x:11500,y:13,name:null,sequence:null},
+			{x:12500,y:14,name:null,sequence:null},
+			{x:13500,y:16,name:null,sequence:null},
+			{x:14500,y:0,name:null,sequence:null},
+			{x:15500,y:73,name:null,sequence:null},
+			{x:16500,y:24,name:null,sequence:null},
+			{x:17500,y:27,name:null,sequence:null},
+			{x:18500,y:33,name:null,sequence:null},
+			{x:19500,y:0,name:null,sequence:null},
+			{x:20500,y:6,name:null,sequence:null},
+			{x:21500,y:12,name:null,sequence:null},
+			{x:22500,y:25,name:null,sequence:null},
+			{x:23500,y:18,name:null,sequence:null},
+			{x:24500,y:42,name:null,sequence:null},
+			{x:25500,y:36,name:null,sequence:null},
+			{x:26500,y:6,name:null,sequence:null},
+			{x:27500,y:0,name:null,sequence:null},
+			{x:28500,y:0,name:null,sequence:null},
+			{x:29500,y:0,name:null,sequence:null},
+			{x:30500,y:0,name:null,sequence:null},
+			{x:31500,y:0,name:null,sequence:null},
+			{x:32500,y:0,name:null,sequence:null},
+			{x:33500,y:0,name:null,sequence:null},
+			{x:34500,y:0,name:null,sequence:null},
+			{x:35500,y:0,name:null,sequence:null},
+			{x:36500,y:0,name:null,sequence:null},
+			{x:37500,y:0,name:null,sequence:null},
+			{x:38500,y:0,name:null,sequence:null},
+			{x:39500,y:0,name:null,sequence:null},
+			{x:40500,y:0,name:null,sequence:null},
+			{x:41500,y:0,name:null,sequence:null},
+			{x:42500,y:0,name:null,sequence:null},
+			{x:43500,y:0,name:null,sequence:null},
+			{x:44421,y:0,name:null,sequence:null}
+	    ],
+		color:'#0000cc'
+	},{		
+        name:'di-SSR pD1RD',
+		data: [
+		    {x:10000,y:null,name:null,seq:null},
+			{x:10500,y:18,name:null,seq:null},
+			{x:11500,y:18,name:null,seq:null},
+			{x:12500,y:6,name:null,seq:null},
+			{x:13500,y:0,name:null,seq:null},
+			{x:14500,y:6,name:null,seq:null},
+			{x:15500,y:6,name:null,seq:null},
+			{x:16500,y:14,name:null,seq:null},
+			{x:17500,y:18,name:null,seq:null},
+			{x:18500,y:0,name:null,seq:null},
+			{x:19500,y:6,name:null,seq:null},
+			{x:20500,y:30,name:null,seq:null},
+			{x:21500,y:22,name:null,seq:null},
+			{x:22500,y:6,name:null,seq:null},
+			{x:23500,y:6,name:null,seq:null},
+			{x:24500,y:6,name:null,seq:null},
+			{x:25500,y:12,name:null,seq:null},
+			{x:26500,y:74,name:null,seq:null},
+			{x:27500,y:60,name:null,seq:null},
+			{x:28500,y:72,name:null,seq:null},
+			{x:29500,y:54,name:null,seq:null},
+			{x:30500,y:66,name:null,seq:null},
+			{x:31500,y:84,name:null,seq:null},
+			{x:32500,y:60,name:null,seq:null},
+			{x:33500,y:72,name:null,seq:null},
+			{x:34500,y:84,name:null,seq:null},
+			{x:35500,y:60,name:null,seq:null},
+			{x:36500,y:42,name:null,seq:null},
+			{x:37500,y:78,name:null,seq:null},
+			{x:38500,y:72,name:null,seq:null},
+			{x:39500,y:60,name:null,seq:null},
+			{x:40500,y:84,name:null,seq:null},
+			{x:41500,y:78,name:null,seq:null},
+			{x:42500,y:78,name:null,seq:null},
+			{x:43500,y:54,name:null,seq:null},
+			{x:44421,y:58.46528624,name:null,seq:null}
+		],
+		color:'#ff99ff'
+	},{
+	    name:'tri-SSR pD1RD',
+		data: [
+		    {x:10000,y:null,name:null,seq:null},
+			{x:10500,y:0,name:null,seq:null},
+			{x:11500,y:9,name:null,seq:null},
+			{x:12500,y:18,name:null,seq:null},
+			{x:13500,y:0,name:null,seq:null},
+			{x:14500,y:0,name:null,seq:null},
+			{x:15500,y:18,name:null,seq:null},
+			{x:16500,y:0,name:null,seq:null},
+			{x:17500,y:36,name:null,seq:null},
+			{x:18500,y:27,name:null,seq:null},
+			{x:19500,y:9,name:null,seq:null},
+			{x:20500,y:0,name:null,seq:null},
+			{x:21500,y:0,name:null,seq:null},
+			{x:22500,y:0,name:null,seq:null},
+			{x:23500,y:18,name:null,seq:null},
+			{x:24500,y:0,name:null,seq:null},
+			{x:25500,y:27,name:null,seq:null},
+			{x:26500,y:0,name:null,seq:null},
+			{x:27500,y:0,name:null,seq:null},
+			{x:28500,y:0,name:null,seq:null},
+			{x:29500,y:0,name:null,seq:null},
+			{x:30500,y:0,name:null,seq:null},
+			{x:31500,y:0,name:null,seq:null},
+			{x:32500,y:0,name:null,seq:null},
+			{x:33500,y:0,name:null,seq:null},
+			{x:34500,y:0,name:null,seq:null},
+			{x:35500,y:0,name:null,seq:null},
+			{x:36500,y:0,name:null,seq:null},
+			{x:37500,y:0,name:null,seq:null},
+			{x:38500,y:0,name:null,seq:null},
+			{x:39500,y:0,name:null,seq:null},
+			{x:40500,y:0,name:null,seq:null},
+			{x:41500,y:0,name:null,seq:null},
+			{x:42500,y:0,name:null,seq:null},
+			{x:43500,y:0,name:null,seq:null},
+			{x:44421,y:0,name:null,seq:null}
+		],
+		color:'#660066'
+	},{
+	    name:'tetra-SSR pD1RD',
+		data:[
+		    {x:10000,y:null,name:null,seq:null},
+			{x:10500,y:0,name:null,seq:null},
+			{x:11500,y:0,name:null,seq:null},
+			{x:12500,y:24,name:null,seq:null},
+			{x:13500,y:12,name:null,seq:null},
+			{x:14500,y:0,name:null,seq:null},
+			{x:15500,y:0,name:null,seq:null},
+			{x:16500,y:48,name:null,seq:null},
+			{x:17500,y:0,name:null,seq:null},
+			{x:18500,y:0,name:null,seq:null},
+			{x:19500,y:0,name:null,seq:null},
+			{x:20500,y:0,name:null,seq:null},
+			{x:21500,y:0,name:null,seq:null},
+			{x:22500,y:0,name:null,seq:null},
+			{x:23500,y:0,name:null,seq:null},
+			{x:24500,y:0,name:null,seq:null},
+			{x:25500,y:0,name:null,seq:null},
+			{x:26500,y:0,name:null,seq:null},
+			{x:27500,y:0,name:null,seq:null},
+			{x:28500,y:0,name:null,seq:null},
+			{x:29500,y:0,name:null,seq:null},
+			{x:30500,y:0,name:null,seq:null},
+			{x:31500,y:0,name:null,seq:null},
+			{x:32500,y:0,name:null,seq:null},
+			{x:33500,y:0,name:null,seq:null},
+			{x:34500,y:0,name:null,seq:null},
+			{x:35500,y:0,name:null,seq:null},
+			{x:36500,y:0,name:null,seq:null},
+			{x:37500,y:0,name:null,seq:null},
+			{x:38500,y:0,name:null,seq:null},
+			{x:39500,y:0,name:null,seq:null},
+			{x:40500,y:0,name:null,seq:null},
+			{x:41500,y:0,name:null,seq:null},
+			{x:42500,y:0,name:null,seq:null},
+			{x:43500,y:0,name:null,seq:null},
+			{x:44421,y:0,name:null,seq:null}   
+	    ],
+		color:'#ffcc00'
+	},{
+	    name:'penta-SSR pD1RD',
+        data:[
+            {x:10000,y:null,name:null,seq:null},
+			{x:10500,y:0,name:null,seq:null},
+			{x:11500,y:0,name:null,seq:null},
+			{x:12500,y:0,name:null,seq:null},
+			{x:13500,y:0,name:null,seq:null},
+			{x:14500,y:0,name:null,seq:null},
+			{x:15500,y:0,name:null,seq:null},
+			{x:16500,y:0,name:null,seq:null},
+			{x:17500,y:0,name:null,seq:null},
+			{x:18500,y:0,name:null,seq:null},
+			{x:19500,y:0,name:null,seq:null},
+			{x:20500,y:15,name:null,seq:null},
+			{x:21500,y:0,name:null,seq:null},
+			{x:22500,y:0,name:null,seq:null},
+			{x:23500,y:0,name:null,seq:null},
+			{x:24500,y:0,name:null,seq:null},
+			{x:25500,y:0,name:null,seq:null},
+			{x:26500,y:0,name:null,seq:null},
+			{x:27500,y:0,name:null,seq:null},
+			{x:28500,y:0,name:null,seq:null},
+			{x:29500,y:0,name:null,seq:null},
+			{x:30500,y:0,name:null,seq:null},
+			{x:31500,y:0,name:null,seq:null},
+			{x:32500,y:0,name:null,seq:null},
+			{x:33500,y:0,name:null,seq:null},
+			{x:34500,y:0,name:null,seq:null},
+			{x:35500,y:0,name:null,seq:null},
+			{x:36500,y:0,name:null,seq:null},
+			{x:37500,y:0,name:null,seq:null},
+			{x:38500,y:0,name:null,seq:null},
+			{x:39500,y:0,name:null,seq:null},
+			{x:40500,y:0,name:null,seq:null},
+			{x:41500,y:0,name:null,seq:null},
+			{x:42500,y:0,name:null,seq:null},
+			{x:43500,y:0,name:null,seq:null},
+			{x:44421,y:0,name:null,seq:null}
+		],
+		color:'#00ff00'
+	},{
+	    name:'hexa-SSR pD1RD',
+		data:[
+		    {x:10000,y:null,name:null,seq:null},
+			{x:10500,y:36,name:null,seq:null},
+			{x:11500,y:0,name:null,seq:null},
+			{x:12500,y:18,name:null,seq:null},
+			{x:13500,y:0,name:null,seq:null},
+			{x:14500,y:0,name:null,seq:null},
+			{x:15500,y:0,name:null,seq:null},
+			{x:16500,y:18,name:null,seq:null},
+			{x:17500,y:0,name:null,seq:null},
+			{x:18500,y:0,name:null,seq:null},
+			{x:19500,y:0,name:null,seq:null},
+			{x:20500,y:0,name:null,seq:null},
+			{x:21500,y:0,name:null,seq:null},
+			{x:22500,y:0,name:null,seq:null},
+			{x:23500,y:0,name:null,seq:null},
+			{x:24500,y:0,name:null,seq:null},
+			{x:25500,y:0,name:null,seq:null},
+			{x:26500,y:0,name:null,seq:null},
+			{x:27500,y:0,name:null,seq:null},
+			{x:28500,y:0,name:null,seq:null},
+			{x:29500,y:0,name:null,seq:null},
+			{x:30500,y:0,name:null,seq:null},
+			{x:31500,y:0,name:null,seq:null},
+			{x:32500,y:0,name:null,seq:null},
+			{x:33500,y:0,name:null,seq:null},
+			{x:34500,y:0,name:null,seq:null},
+			{x:35500,y:0,name:null,seq:null},
+			{x:36500,y:0,name:null,seq:null},
+			{x:37500,y:0,name:null,seq:null},
+			{x:38500,y:0,name:null,seq:null},
+			{x:39500,y:0,name:null,seq:null},
+			{x:40500,y:0,name:null,seq:null},
+			{x:41500,y:0,name:null,seq:null},
+			{x:42500,y:0,name:null,seq:null},
+			{x:43500,y:0,name:null,seq:null},
+			{x:44421,y:0,name:null,seq:null}
+		],
+		color:'#cccccc'
+	},{
+		name:'Overall SSR pD1RD',				
+		//marker:{
+		    //symbol: 'url(http://www.highcharts.com/demo/gfx/sun.png)'
+		//},
+		data: [
+			{x:10000,y:null,name:'gap',seq:'gap'},
+			{x:10500,y:66,name:null,seq:'Unnormal differential unit'},
+			{x:11500,y:40,name:null,seq:null},
+			{x:12500,y:80,name:null,seq:null},
+			{x:13500,y:28,name:null,seq:null},
+			{x:14500,y:6,name:null,seq:null},
+			{x:15500,y:97,name:null,seq:null},
+			{x:16500,y:104,name:'S1-LP1',seq:null},
+			{x:17500,y:81,name:null,seq:null},
+			{x:18500,y:60,name:null,seq:null},
+			{x:19500,y:15,name:null,seq:null},
+			{x:20500,y:51,name:null,seq:null},
+			{x:21500,y:34,name:null,seq:null},
+			{x:22500,y:31,name:null,seq:null},
+			{x:23500,y:42,name:null,seq:null},
+			{x:24500,y:48,name:null,seq:null},
+			{x:25500,y:75,name:null,seq:null},
+			{x:26500,y:80,name:null,seq:null},
+			{x:27500,y:60,name:null,seq:null},
+			{x:28500,y:72,name:null,seq:null},
+			{x:29500,y:54,name:null,seq:null},
+			{x:30500,y:66,name:null,seq:null},
+			{x:31500,y:84,name:null,seq:null},
+			{x:32500,y:60,name:null,seq:null},
+			{x:33500,y:72,name:null,seq:null},
+			{x:34500,y:84,name:null,seq:null},
+			{x:35500,y:60,name:null,seq:null},
+			{x:36500,y:42,name:null,seq:null},
+			{x:37500,y:78,name:null,seq:null},
+			{x:38500,y:72,name:null,seq:null},
+			{x:39500,y:60,name:null,seq:null},
+			{x:40500,y:84,name:null,seq:null},
+			{x:41500,y:78,name:null,seq:null},
+			{x:42500,y:78,name:null,seq:null},
+			{x:43500,y:54,name:null,seq:null},
+			{x:44421,y:58.46528624,name:null,seq: 'Unnormal differential unit'}
+	    ],
+		color:'#cc0033'			
+	},{
+        name:'SSR big-cluster (Clu)',			
+		data: [
+            {x:26285,y:-100,name:'S1-AGdi-Clu-1',seq:null},
+            {x:44704,y:-100,name:null,seq:null},            
+        ],
+		color:'#000000'
+	},{
+	    name:'SSR mini-cluster (MClu)',
+		data:[
+		    {x:17513,y:-150,name:'S1-mix(Cmono-TCtri)-MClu-1',seq:null},
+            {x:18665,y:-150,name:null,seq:null}, 
+		],
+		color:'#66cccc'
+	},{
+	    name:'Protein gene coding region',			
+		data:[
+		    {x:null,y:-200,name:null,seq:null},
+            {x:null,y:-200,name:null,seq:null}, 
+		],
+		color:'#ff0000'
+	},{
+	    name:'Protein gene noncoding region',
+		data:[
+		    {x:null,y:-200,name:null,seq:null},
+            {x:null,y:-200,name:null,seq:null}, 
+		],
+		color:'#999999'
+	},{
+	    name:'ncRNA gene exon',
+		data:[
+		    {x:null,y:-250,name:null,seq:null},
+            {x:null,y:-250,name:null,seq:null}, 
+		],
+		color:'#ff00ff'
+	},{
+	    name:'ncRNA gene intron',
+		data:[
+		    {x:null,y:-250,name:null,seq:null},
+            {x:null,y:-250,name:null,seq:null}, 
+		],
+		color:'#006633'
+	},{
+	    name:'Bottom',
+		data:[
+		    {x:10001,y:-300,name:null,seq:null},             
+		],
+		color:'#000000'	
+	}]	
+});
+		</script>
+	</body>
+</html>
